@@ -1,0 +1,20 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    cstruct (1.0.0)
+    git (1.2.5)
+    jeweler (1.6.4)
+      bundler (~> 1.0)
+      git (>= 1.2.5)
+      rake
+    rake (0.9.2.2)
+    rdoc (2.4.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.0.0)
+  cstruct
+  jeweler (~> 1.6.0)
+  rdoc (~> 2.4.2)

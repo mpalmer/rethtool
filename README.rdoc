@@ -1,19 +1,40 @@
-= rethtool
+= Rethtool
 
-Description goes here.
+Have you ever needed to get at some details about a network interface from
+inside a Ruby script, but got stuck trying to parse the output of ethtool?
+If so, you're one-in-a-million, but at least you don't have to write an
+ethtool parser any more.  use Rethtool instead!
+
+At present, Rethtool only supports a couple of things:
+
+* Retrieve various details about the interface (link speed, duplex, etc).
+
+* Determine if the link is currently up or down.
+
+Adding extra SIOCETHTOOL features is relatively straightforward, thanks to
+cstruct and the base infrastructure already in place, so feel free to have a
+hack and pass the results back up.
+
 
 == Contributing to rethtool
  
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
-* Fork the project
-* Start a feature/bugfix branch
-* Commit and push until you are happy with your contribution
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+Send me patches via e-mail, please (mpalmer@hezmatt.org).  I might
+eventually notice a pull request on github, but e-mail goes straight to my
+frontal lobe.
+
 
 == Copyright
 
-Copyright (c) 2011 Matt Palmer. See LICENSE.txt for
-further details.
+Copyright (C) 2011 Matt Palmer <mpalmer@hezmatt.org>
 
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 3, as
+published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, see <http://www.gnu.org/licences/>
