@@ -37,9 +37,9 @@ class Rethtool::InterfaceSettings
 	# interface you want to get the settings for.
 	def initialize(interface)
 		cmd = Rethtool::EthtoolCmd.new
-		cmd.cmd = REthtool::ETHTOOL_CMD_GSET
+		cmd.cmd = Rethtool::ETHTOOL_CMD_GSET
 		
-		@data = REthtool.ioctl(interface, cmd)
+		@data = Rethtool.ioctl(interface, cmd)
 	end
 	
 	# Return an array of the modes supported by the interface.  Returns an
