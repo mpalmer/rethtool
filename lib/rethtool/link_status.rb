@@ -16,11 +16,11 @@ class Rethtool::LinkStatus
 		cmd = Rethtool::EthtoolValue.new
 		cmd.cmd = Rethtool::ETHTOOL_CMD_GSET
 		
-		@data = Rethtool.ioctl(interface, cmd).data
+		@status = Rethtool.ioctl(interface, cmd).value
 	end
 	
 	def up?
-		@data == 1
+		@status == 1
 	end
 	
 	def down?

@@ -3,5 +3,5 @@ require 'cstruct'
 
 class Rethtool::EthtoolValue < CStruct
 	uint32 :cmd
-	uint32 :data
+	uint32 :value
 end
