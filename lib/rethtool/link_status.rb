@@ -19,11 +19,11 @@ class Rethtool::LinkStatus
 		@status = Rethtool.ioctl(interface, cmd).value
 	end
 	
-	def up?
-		@status == 1
+	def down?
+		@status == 0
 	end
 	
-	def down?
-		!up?
+	def up?
+		!down?
 	end
 end
