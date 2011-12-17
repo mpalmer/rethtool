@@ -5,7 +5,11 @@ require 'rethtool/ethtool_cmd'
 #
 # Create an instance of this class with the interface name as the only
 # parameter, then use the available instance methods to get the info you
-# seek.
+# seek:
+#
+#    if = Rethtool::InterfaceSettings.new("eth0")
+#    puts "Current link mode is #{if.current_mode}"
+#
 class Rethtool::InterfaceSettings
 	Mode = Struct.new(:speed, :duplex, :media)
 
