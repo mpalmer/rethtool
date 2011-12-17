@@ -12,7 +12,7 @@ require 'rethtool/ethtool_value'
 #
 class Rethtool::LinkStatus
 	def initialize(interface)
-		cmd = EthtoolValue.new
+		cmd = Rethtool::EthtoolValue.new
 		cmd.cmd = Rethtool::ETHTOOL_CMD_GSET
 		
 		@data = Rethtool.ioctl(interface, cmd).data
