@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
     "lib/rethtool/ethtool_value.rb",
     "lib/rethtool/interface_settings.rb",
     "lib/rethtool/link_status.rb",
+    "rethtool.gemspec",
     "test/helper.rb",
     "test/test_rethtool.rb"
   ]
