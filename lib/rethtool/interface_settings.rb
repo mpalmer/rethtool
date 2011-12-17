@@ -1,3 +1,4 @@
+require 'rethtool'
 require 'rethtool/ethtool_cmd'
 
 # All of the settings of a network interface.  Ridiculous amounts of

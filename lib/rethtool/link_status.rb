@@ -1,3 +1,4 @@
+require 'rethtool'
 require 'rethtool/ethtool_value'
 
 # Retrieve the current link status of an interface.

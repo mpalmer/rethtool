@@ -1,3 +1,4 @@
+require 'rethtool'
 require 'cstruct'
 
 class Rethtool::EthtoolCmd < CStruct
