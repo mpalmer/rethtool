@@ -13,12 +13,12 @@ At present, Rethtool only supports a couple of things:
 
 Adding extra SIOCETHTOOL features is relatively straightforward, thanks to
 cstruct and the base infrastructure already in place, so feel free to have a
-hack and pass the results back up.
+hack and send me a patch.
 
 
 == Contributing to rethtool
  
-Send me patches via e-mail, please (mpalmer@hezmatt.org).  I might
+Send me patches via e-mail, please (theshed+rethtool@hezmatt.org).  I might
 eventually notice a pull request on github, but e-mail goes straight to my
 frontal lobe.
 
