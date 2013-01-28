@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "rethtool"
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Matt Palmer"]
-  s.date = "2011-12-17"
+  s.date = "2013-01-28"
   s.email = "mpalmer@hezmatt.org"
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://theshed.hezmatt.org/rethtool"
   s.licenses = ["GPLv3"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.10"
+  s.rubygems_version = "1.8.24"
   s.summary = "Partial Ruby wrapper around the SIOCETHTOOL ioctl"
 
   if s.respond_to? :specification_version then
