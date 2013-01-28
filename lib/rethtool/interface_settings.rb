@@ -62,21 +62,19 @@ class Rethtool::InterfaceSettings
 		speed = :unknown if speed == 65535
 		
 		duplex = case @data.duplex
-			when 0: :half
-			when 1: :full
-			else
-				:unknown
+			when 0 then :half
+			when 1 then :full
+			else        :unknown
 		end
 		
 		port = case @data.port
-			when 0: 'T'
-			when 1: 'AUI'
-			when 2: 'MII'
-			when 3: 'F'
-			when 4: 'BNC'
-			when 255: 'Other'
-			else
-				'Unknown'
+			when 0   then 'T'
+			when 1   then 'AUI'
+			when 2   then 'MII'
+			when 3   then 'F'
+			when 4   then 'BNC'
+			when 255 then 'Other'
+			else          'Unknown'
 		end
 		
 		Mode.new(speed, duplex, port)
