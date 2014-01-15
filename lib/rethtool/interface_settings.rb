@@ -36,6 +36,7 @@ class Rethtool::InterfaceSettings
 	# Create a new InterfaceSettings object.  Simply pass it the name of the
 	# interface you want to get the settings for.
 	def initialize(interface)
+		@interface = interface
 		cmd = Rethtool::EthtoolCmd.new
 		cmd.cmd = Rethtool::ETHTOOL_CMD_GSET
 		
@@ -87,6 +88,14 @@ class Rethtool::InterfaceSettings
 		modes = self.advertised_modes
 		best_speed = modes.map { |m| m.speed }.sort.last
 		high_speed_modes = modes.find_all { |m| m.speed == best_speed }
+
+		# Somewhere recently, RHEL decided to release a kernel or libc update
+		# that changes the behaviour of the ethtool ioctl so that instead of
+		# returning EOPNOTSUPP when you ask for available speeds on an interface
+		# that doesn't support that (like bonded NICs), it now returns success with
+		# an empty list.  WHO DOES THAT SORT OF SHIT?!?  So we've got to fake it
+		# ourselves.
+		raise Errno::EOPNOTSUPP.new("#{@interface} doesn't support enumerating speed modes") if modes.empty?
 
 		if high_speed_modes.length == 0
 			raise RuntimeError.new("Can't happen: no modes with the best speed?!?")
