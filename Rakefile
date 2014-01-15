@@ -11,25 +11,14 @@ rescue Bundler::BundlerError => e
 end
 require 'rake'
 
-require 'jeweler'
-Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "rethtool"
-  gem.homepage = "http://theshed.hezmatt.org/rethtool"
-  gem.license = "GPLv3"
-  gem.summary = %Q{Partial Ruby wrapper around the SIOCETHTOOL ioctl}
-  gem.email = "mpalmer@hezmatt.org"
-  gem.authors = ["Matt Palmer"]
-  # dependencies defined in Gemfile
-end
-Jeweler::RubygemsDotOrgTasks.new
-
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
   test.pattern = 'test/**/test_*.rb'
   test.verbose = true
 end
+
+Bundler::GemHelper.install_tasks
 
 task :default => :test
 
