@@ -19,8 +19,9 @@ class Rethtool
 	SIOCETHTOOL = 0x8946
 
 	# From /u/i/linux/ethtool.h
-	ETHTOOL_CMD_GLINK = 0x0000000a
-	ETHTOOL_CMD_GSET  = 0x00000001
+	ETHTOOL_CMD_GLINK     = 0x0000000a
+	ETHTOOL_CMD_GSET      = 0x00000001
+	ETHTOOL_CMD_GDRVINFO  = 0x00000003
 
 	class << self
 		# Issue an SIOCETHTOOL ioctl.  ecmd must respond to #data (such
