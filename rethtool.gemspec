@@ -7,12 +7,11 @@ Gem::Specification.new do |s|
 	s.date = "2014-01-16"
 	s.email = "theshed+rethtool@hezmatt.org"
 	s.extra_rdoc_files = [
-	  "LICENSE.txt",
+	  "COPYING",
 	  "README.rdoc"
 	]
 	s.files = [
 	  "COPYING",
-	  "LICENSE.txt",
 	  "README.rdoc",
 	  "VERSION",
 	  "lib/rethtool.rb",
