@@ -21,3 +21,17 @@ class Rethtool::EthtoolCmd < CStruct
 	uint32 :reserved2
 	uint32 :reserved3
 end
+
+class Rethtool::EthtoolCmdDriver < CStruct
+        uint32 :cmd
+        char :driver,[32]
+        char :version,[32]
+        char :fw_version,[32]
+        char :bus_info,[32]
+        char :reserved1,[32]
+        char :reserved2,[16]
+        uint32 :n_stats
+        uint32 :testinfo_len
+        uint32 :eedump_len
+        uint32 :regdump_len
+end

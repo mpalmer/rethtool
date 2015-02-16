@@ -38,10 +38,25 @@ class Rethtool::InterfaceSettings
 	def initialize(interface)
 		@interface = interface
 		cmd = Rethtool::EthtoolCmd.new
+		cmd_driver = Rethtool::EthtoolCmdDriver.new
 		cmd.cmd = Rethtool::ETHTOOL_CMD_GSET
+		cmd_driver.cmd = Rethtool::ETHTOOL_CMD_GDRVINFO
 		
 		@data = Rethtool.ioctl(interface, cmd)
+		@driver_data = Rethtool.ioctl(interface, cmd_driver)
 	end
+
+        def as_str(str)
+		str.pack('c*').delete("\000")
+        end
+
+        def driver
+		self.as_str(@driver_data.driver)
+        end
+
+        def bus_info
+		self.as_str(@driver_data.bus_info)
+        end
 	
 	# Return an array of the modes supported by the interface.  Returns an
 	# array of Mode objects.
