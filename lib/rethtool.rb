@@ -32,12 +32,11 @@ class Rethtool
 		def ioctl(interface, ecmd)
 			sock = Socket.new(Socket::AF_INET, Socket::SOCK_DGRAM, 0)
 
-			ifreq = [interface, ecmd.data].pack("a16p")
+			rv = ecmd.clone
+			ifreq = [interface, ecmd.data].pack("a16P#{rv.data.length}")
 
 			sock.ioctl(SIOCETHTOOL, ifreq)
 
-			rv = ecmd.class.new
-			rv.data = ifreq.unpack("a16p")[1]
 			rv
 		end
 	end
