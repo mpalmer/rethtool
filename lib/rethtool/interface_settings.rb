@@ -141,7 +141,17 @@ class Rethtool::InterfaceSettings
 			  1 << 17 => Mode.new(1000, :full, 'KX'),
 			  1 << 18 => Mode.new(10000, :full, 'KX4'),
 			  1 << 19 => Mode.new(10000, :full, 'KR'),
-			  1 << 20 => Mode.new(10000, :fec, 'R')
+			  1 << 20 => Mode.new(10000, :fec, 'R'),
+			  1 << 21 => Mode.new(20000, :full, 'MLD2'),
+			  1 << 22 => Mode.new(20000, :full, 'KR2'),
+			  1 << 23 => Mode.new(40000, :full, 'KR4'),
+			  1 << 24 => Mode.new(40000, :full, 'CR4'),
+			  1 << 25 => Mode.new(40000, :full, 'SR4'),
+			  1 << 26 => Mode.new(40000, :full, 'LR4'),
+			  1 << 27 => Mode.new(56000, :full, 'KR4'),
+			  1 << 28 => Mode.new(56000, :full, 'CR4'),
+			  1 << 29 => Mode.new(56000, :full, 'SR4'),
+			  1 << 30 => Mode.new(56000, :full, 'LR4'),
 	}
 
 	# Turn a uint32 of bits into a list of supported modes.  Sigh.
