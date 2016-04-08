@@ -19,9 +19,11 @@ class Rethtool
 	SIOCETHTOOL = 0x8946
 
 	# From /u/i/linux/ethtool.h
-	ETHTOOL_CMD_GLINK     = 0x0000000a
-	ETHTOOL_CMD_GSET      = 0x00000001
-	ETHTOOL_CMD_GDRVINFO  = 0x00000003
+	ETHTOOL_CMD_GLINK      = 0x0000000a
+	ETHTOOL_CMD_GSET       = 0x00000001
+	ETHTOOL_CMD_GDRVINFO   = 0x00000003
+	ETHTOOL_CMD_GRINGPARAM = 0x00000010
+	ETHTOOL_CMD_SRINGPARAM = 0x00000011
 
 	class << self
 		# Issue an SIOCETHTOOL ioctl.  ecmd must respond to #data (such
@@ -45,3 +47,4 @@ end
 
 require 'rethtool/interface_settings'
 require 'rethtool/link_status'
+require 'rethtool/ring_settings'
