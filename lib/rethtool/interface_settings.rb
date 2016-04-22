@@ -41,19 +41,17 @@ class Rethtool::InterfaceSettings
 		cmd.cmd = Rethtool::ETHTOOL_CMD_GSET
 		@data = Rethtool.ioctl(interface, cmd)
 
-		cmd_driver = Rethtool::EthtoolCmdDriver.new
-		cmd_driver.cmd = Rethtool::ETHTOOL_CMD_GDRVINFO
-		@driver_data = Rethtool.ioctl(interface, cmd_driver)
+		@driver_info = Rethtool::DriverSettings.new(interface)
 	end
 
         # Returns a string with the value of the interface driver (kernel module).
         def driver
-		as_str(@driver_data.driver)
+		@driver_info.driver
         end
 
         # Returns a string with the bus information of the interface.
         def bus_info
-		as_str(@driver_data.bus_info)
+		@driver_info.bus_info
         end
 	
 	# Return an array of the modes supported by the interface.  Returns an
