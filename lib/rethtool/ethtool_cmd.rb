@@ -35,3 +35,15 @@ class Rethtool::EthtoolCmdDriver < CStruct
         uint32 :eedump_len
         uint32 :regdump_len
 end
+
+class Rethtool::EthtoolCmdRing < CStruct
+	uint32 :cmd
+	uint32 :rx_max_pending
+	uint32 :rx_mini_max_pending
+	uint32 :rx_jumbo_max_pending
+	uint32 :tx_max_pending
+	uint32 :rx_pending
+	uint32 :rx_mini_pending
+	uint32 :rx_jumbo_pending
+	uint32 :tx_pending
+end
