@@ -10,23 +10,11 @@ Gem::Specification.new do |s|
 	  "COPYING",
 	  "README.rdoc"
 	]
-	s.files = [
-	  "COPYING",
-	  "README.rdoc",
-	  "VERSION",
-	  "lib/rethtool.rb",
-	  "lib/rethtool/ethtool_cmd.rb",
-	  "lib/rethtool/ethtool_value.rb",
-	  "lib/rethtool/interface_settings.rb",
-	  "lib/rethtool/link_status.rb",
-	]
-	s.homepage = "http://theshed.hezmatt.org/rethtool"
+	s.files = `git ls-files`.split("\n")
+	s.homepage = "https://github.com/mpalmer/rethtool"
 	s.licenses = ["GPLv3"]
 	s.require_paths = ["lib"]
-	s.rubygems_version = "1.8.24"
 	s.summary = "Partial Ruby wrapper around the SIOCETHTOOL ioctl"
-
-	s.specification_version = 3
 
 	s.add_runtime_dependency(%q<cstruct>, [">= 0"])
 	s.add_development_dependency(%q<rake>, ["~> 10.0"])
